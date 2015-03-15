@@ -311,7 +311,7 @@ validating query parameters input.
 
 =head1 METHODS
 
-L<Mojolicious::Plugin::FormValidator> inherits all methods from
+L<Mojolicious::Plugin::FormChecker> inherits all methods from
 L<Mojolicious::Plugin> and implements the following new ones.
 
 =head2 register
@@ -600,7 +600,7 @@ value.
     min_error => 'Too short :(',
 
 This is the error for C<min> rule. B<Defaults to:>
-C<Parameter $name must be at least $rule->{min} characters long>
+C<< Parameter $name must be at least $min characters long >
 
 =head4 C<code_error>
 
