@@ -61,7 +61,7 @@ validating query parameters input.
 
 # METHODS
 
-[Mojolicious::Plugin::FormValidator](https://metacpan.org/pod/Mojolicious::Plugin::FormValidator) inherits all methods from
+[Mojolicious::Plugin::FormChecker](https://metacpan.org/pod/Mojolicious::Plugin::FormChecker) inherits all methods from
 [Mojolicious::Plugin](https://metacpan.org/pod/Mojolicious::Plugin) and implements the following new ones.
 
 ## register
@@ -75,7 +75,7 @@ Register plugin in [Mojolicious](https://metacpan.org/pod/Mojolicious) applicati
 ## `form_checker`
 
     $c->form_checker(
-        error_class => 'error',
+        error_class => 'alert alert-extra-danger',
         rules => {
             name => { max => 2, },
             email => { max => 200, },
@@ -350,7 +350,7 @@ value.
     min_error => 'Too short :(',
 
 This is the error for `min` rule. **Defaults to:**
-`Parameter $name must be at least $rule-`{min} characters long>
+`Parameter $name must be at least $min characters long >`
 
 #### `code_error`
 
@@ -442,3 +442,11 @@ Zoffix Znet `zoffix at cpan.org`, ([http://zoffix.com/](http://zoffix.com/))
 You can use and distribute this module under the same terms as Perl itself.
 See the `LICENSE` file included in this distribution for complete
 details.
+
+# POD ERRORS
+
+Hey! **The above document had some coding errors, which are explained below:**
+
+- Around line 358:
+
+    Unterminated C< ... > sequence
