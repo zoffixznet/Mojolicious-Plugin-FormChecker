@@ -37,7 +37,7 @@ sub _perform_checks {
 
     %conf = (
         all_errors  => 1, # TODO: get rid of this and always do all_errors
-        error_class => 'error',
+        error_class => 'alert alert-extra-danger',
         %conf,
     );
 
@@ -75,7 +75,8 @@ sub _perform_checks {
         form_checker_error => $self->_error,
         form_checker_error_wrapped =>
             join "\n", map qq{<p class="} . $conf{error_class}
-                . qq{">$_</p>}, @{ $self->_error || [] },
+                . q{"><i class="glyphicon glyphicon-warning-sign"></i> }
+                . qq{$_</p>}, @{ $self->_error || [] },
     );
 }
 
@@ -325,7 +326,7 @@ Register plugin in L<Mojolicious> application.
 =head2 C<form_checker>
 
     $c->form_checker(
-        error_class => 'error',
+        error_class => 'alert alert-extra-danger',
         rules => {
             name => { max => 2, },
             email => { max => 200, },
