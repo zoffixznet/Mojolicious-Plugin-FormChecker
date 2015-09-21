@@ -601,7 +601,7 @@ value.
     min_error => 'Too short :(',
 
 This is the error for C<min> rule. B<Defaults to:>
-C<< Parameter $name must be at least $min characters long >
+C<Parameter $name must be at least $min characters long>
 
 =head4 C<code_error>
 
